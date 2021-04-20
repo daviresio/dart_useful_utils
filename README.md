@@ -25,8 +25,14 @@ tryToDouble(50) # if an error happened return null
 # accepts a double, string, or int, and returns a double with fixed decimal places
 fixedDecimais(value: 3.5784665466456, decimalPlaces: 2) # returns 3.57
 
-percentage(value: 12.8, total: 100) # returns 
-percentageReverse(percentage: 12.8, total: 100) # returns 
+percentage(value: 12.8, total: 150, round: 2) # returns 8.53
+percentageReverse(percentage: 8.53, total: 100) # returns 12.794999999999998
+```
+
+## String functions
+
+```dart
+capitalize('wOrD') # returns word 
 ```
 
 ## Contributing
