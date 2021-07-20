@@ -1,3 +1,5 @@
+/// Convert a string or int to double and returns the double value
+/// Throws a Error if cant be converted
 double toDouble(dynamic value) {
   double parsedValue;
   if (value is String) {
@@ -17,6 +19,8 @@ double toDouble(dynamic value) {
   return parsedValue;
 }
 
+/// Convert a string or int to double and returns the double value
+/// Returns null if cant be converted
 double? tryToDouble(dynamic value) {
   double? parsedValue;
   if (value is String) {
@@ -30,28 +34,30 @@ double? tryToDouble(dynamic value) {
   return parsedValue;
 }
 
+///Check if number is odd and return a bool
 bool isOdd(dynamic value) {
   var doubleValue = toDouble(value);
 
   return doubleValue % 2 != 0;
 }
 
+///Check if number is even and return a bool
 bool isEven(dynamic value) {
   var doubleValue = toDouble(value);
 
   return doubleValue % 2 == 0;
 }
 
+/// Fixed decimals and return the double value
+/// If the input value is a string or int, convert it to double before
 double fixedDecimais({required dynamic value, required int decimalPlaces}) {
   var parsedValue = toDouble(value);
   return toDouble(parsedValue.toStringAsFixed(decimalPlaces));
 }
 
-double percentage({
-  required dynamic value,
-  required dynamic total,
-  int? round,
-}) {
+///Calculate the percentage of a number, and round the result if pass the optional parameter
+double percentage(
+    {required dynamic value, required dynamic total, int? round}) {
   var valueParsed = toDouble(value);
   var totalParsed = toDouble(total);
 
@@ -63,6 +69,7 @@ double percentage({
   }
 }
 
+///Discovery value from percentage of a number, and round the result if pass the optional parameter
 double percentageReverse({
   required dynamic percentage,
   required dynamic total,
@@ -78,4 +85,19 @@ double percentageReverse({
   } else {
     return fixedDecimais(value: result, decimalPlaces: round);
   }
+}
+
+///This funcion is like a lerp and unlerp, but is general. Its expect a number
+/// and a range for interpolate, after the result is interpolated with a second range
+double remap(
+  double value,
+  double start1,
+  double stop1,
+  double start2,
+  double stop2,
+) {
+  final outgoing =
+      start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+
+  return outgoing;
 }
