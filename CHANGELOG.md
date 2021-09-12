@@ -1,3 +1,7 @@
+## 0.0.4
+
+- Add randomInt function
+
 ## 0.0.3
 
 - Create functions remap, lowerAndCapitalize, lowerAndCapitalizeAllWords

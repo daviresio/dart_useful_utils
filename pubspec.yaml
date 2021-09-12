@@ -1,6 +1,6 @@
 name: useful_utils
 description: Useful function utils
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/daviresio/dart_useful_utils
 
 environment:

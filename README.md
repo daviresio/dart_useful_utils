@@ -29,6 +29,9 @@ percentageReverse(percentage: 8.53, total: 100) # returns 12.794999999999998
 
 #this funcion is like a lerp and unlerp, but is general. Its expect a number and a range for interpolate, after the result is interpolated with a second range
 remap(value, start1, stop1, start2, stop2)
+
+# expect a min and max number and return a random number between them
+randomInt(min: 2, max: 10) #return a random number between 2 and 10
 ```
 
 ## String functions

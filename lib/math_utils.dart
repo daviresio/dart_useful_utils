@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 /// Convert a string or int to double and returns the double value
 /// Throws a Error if cant be converted
 double toDouble(dynamic value) {
@@ -100,4 +102,10 @@ double remap(
       start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
 
   return outgoing;
+}
+
+///expect a min and max number and return a random number between them
+int randomInt({required int min, required int max}) {
+  final random = math.Random();
+  return min + random.nextInt(max - min);
 }
